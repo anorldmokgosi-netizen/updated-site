@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chobe National Park Adventure - TRACKS ADVENTURE SAFARIS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary-brown: #8B4513;
+            --dark-brown: #5D4037;
+            --light-brown: #D7CCC8;
+            --olive-green: #6B8E23;
+            --dark-green: #556B2F;
+            --light-beige: #F5F5DC;
+            --gold: #D4AF37;
+            --white: #FFFFFF;
+            --black: #333333;
+            --gray: #757575;
+        }
+        
+        body {
+            background-color: var(--light-beige);
+            color: var(--black);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--dark-brown);
+            color: var(--white);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-image {
+            height: 60px;
+            width: auto;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            color: var(--gold);
+        }
+        
+        .logo-main {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        
+        .logo-subtitle {
+            font-size: 14px;
+            font-style: italic;
+            margin-top: -5px;
+            color: var(--light-beige);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--gold);
+        }
+        
+        /* Safari Detail Hero */
+        .safari-hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+        }
+        
+        .safari-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .safari-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .safari-hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        /* Safari Details Section */
+        .safari-details {
+            padding: 60px 0;
+            background-color: var(--white);
+        }
+        
+        .safari-info {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .safari-description {
+            padding-right: 20px;
+        }
+        
+        .safari-description h2 {
+            color: var(--dark-brown);
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        
+        .safari-description p {
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+        
+        .safari-highlights {
+            background-color: var(--light-beige);
+            padding: 25px;
+            border-radius: 8px;
+        }
+        
+        .safari-highlights h3 {
+            color: var(--dark-brown);
+            margin-bottom: 15px;
+        }
+        
+        .safari-highlights ul {
+            list-style: none;
+        }
+        
+        .safari-highlights li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .safari-highlights li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--olive-green);
+            font-weight: bold;
+        }
+        
+        /* Booking Section */
+        .booking-section {
+            background-color: var(--light-beige);
+            padding: 40px;
+            border-radius: 8px;
+        }
+        
+        .booking-section h2 {
+            color: var(--dark-brown);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .safari-dates {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        
+        .safari-dates th {
+            background-color: var(--light-brown);
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            color: var(--dark-brown);
+        }
+        
+        .safari-dates td {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .availability {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .availability.available {
+            background-color: #E8F5E9;
+            color: #2E7D32;
+        }
+        
+        .availability.full {
+            background-color: #FFEBEE;
+            color: #C62828;
+        }
+        
+        .book-tour-btn {
+            background-color: var(--olive-green);
+            color: var(--white);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .book-tour-btn:hover {
+            background-color: var(--dark-green);
+        }
+        
+        .book-tour-btn:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--dark-brown);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .back-btn:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-brown);
+            color: var(--white);
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        
+        .footer-column p, .footer-column a {
+            color: var(--light-brown);
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+        }
+        
+        .footer-column a:hover {
+            color: var(--gold);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--gold);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+            color: var(--light-brown);
+        }
+        
+        .learn-more-btn {
+            background-color: var(--olive-green);
+            color: var(--white);
+            padding: 12px 25px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        
+        .learn-more-btn:hover {
+            background-color: var(--dark-green);
+        }
+        
+        /* Booking Modal Styles */
+        .booking-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 1000;
+            overflow: auto;
+        }
+        
+        .modal-content {
+            background-color: var(--white);
+            margin: 5% auto;
+            width: 90%;
+            max-width: 700px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+            animation: modalSlideIn 0.3s ease-out;
+        }
+        
+        @keyframes modalSlideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .modal-header {
+            background-color: var(--dark-brown);
+            color: var(--white);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .modal-header h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+        
+        .close-modal {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        .progress-bar {
+            display: flex;
+            background-color: var(--light-beige);
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .progress-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            padding: 10px 0;
+        }
+        
+        .progress-step:not(:last-child):after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: -50%;
+            width: 100%;
+            height: 2px;
+            background-color: var(--light-brown);
+            z-index: 1;
+        }
+        
+        .step-circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: var(--light-brown);
+            color: var(--dark-brown);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 8px;
+            position: relative;
+            z-index: 2;
+            font-weight: bold;
+        }
+        
+        .progress-step.active .step-circle {
+            background-color: var(--olive-green);
+            color: var(--white);
+        }
+        
+        .progress-step.completed .step-circle {
+            background-color: var(--gold);
+            color: var(--dark-brown);
+        }
+        
+        .step-label {
+            font-size: 12px;
+            color: var(--gray);
+        }
+        
+        .progress-step.active .step-label {
+            color: var(--dark-brown);
+            font-weight: bold;
+        }
+        
+        .modal-body {
+            padding: 30px;
+            min-height: 400px;
+        }
+        
+        .step {
+            display: none;
+        }
+        
+        .step.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .step-title {
+            color: var(--dark-brown);
+            margin-bottom: 20px;
+            font-size: 22px;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--dark-brown);
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: var(--olive-green);
+            outline: none;
+        }
+        
+        .phone-group {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .country-code {
+            flex: 0 0 100px;
+        }
+        
+        .phone-number {
+            flex: 1;
+        }
+        
+        .trip-summary {
+            background-color: var(--light-beige);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        
+        .summary-label {
+            color: var(--gray);
+        }
+        
+        .summary-value {
+            color: var(--dark-brown);
+            font-weight: 500;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .checkbox-group input {
+            margin-right: 10px;
+        }
+        
+        .addon-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .addon-option {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .addon-option:hover {
+            border-color: var(--olive-green);
+        }
+        
+        .addon-option.selected {
+            border-color: var(--olive-green);
+            background-color: rgba(107, 142, 35, 0.1);
+        }
+        
+        .addon-price {
+            color: var(--olive-green);
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        .payment-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .payment-option {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .payment-option:hover {
+            border-color: var(--olive-green);
+        }
+        
+        .payment-option.selected {
+            border-color: var(--olive-green);
+            background-color: rgba(107, 142, 35, 0.1);
+        }
+        
+        .payment-details {
+            background-color: var(--light-beige);
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        
+        .payment-amount {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--dark-brown);
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+        .payment-note {
+            font-size: 14px;
+            color: var(--gray);
+            text-align: center;
+        }
+        
+        .modal-footer {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #eee;
+        }
+        
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-prev {
+            background-color: var(--light-brown);
+            color: var(--dark-brown);
+        }
+        
+        .btn-prev:hover {
+            background-color: #c8b7a6;
+        }
+        
+        .btn-next {
+            background-color: var(--olive-green);
+            color: var(--white);
+        }
+        
+        .btn-next:hover {
+            background-color: var(--dark-green);
+        }
+        
+        .btn-submit {
+            background-color: var(--gold);
+            color: var(--dark-brown);
+        }
+        
+        .btn-submit:hover {
+            background-color: #e6b800;
+        }
+        
+        .confirmation {
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        .confirmation-icon {
+            font-size: 60px;
+            color: var(--olive-green);
+            margin-bottom: 20px;
+        }
+        
+        .confirmation h3 {
+            color: var(--dark-brown);
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        
+        .confirmation p {
+            color: var(--gray);
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        
+        .booking-reference {
+            background-color: var(--light-beige);
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-weight: bold;
+            color: var(--dark-brown);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            .logo-container {
+                margin-bottom: 15px;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 5px 10px;
+            }
+            
+            .safari-hero h1 {
+                font-size: 36px;
+            }
+            
+            .safari-hero p {
+                font-size: 18px;
+            }
+            
+            .safari-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .safari-description {
+                padding-right: 0;
+            }
+            
+            .safari-dates {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
+            }
+            
+            .addon-options, .payment-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .phone-group {
+                flex-direction: column;
+            }
+            
+            .country-code {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo-container">
+                <!-- ADD YOUR LOGO HERE -->
+                <!-- Replace "logo.png" with your actual logo file name -->
+                <img src="logo.png" alt="TRACKS Adventure Safaris Logo" class="logo-image">
+                <div class="logo-text">
+                    <div class="logo-main">TRACKS</div>
+                    <div class="logo-subtitle">ADVENTURE SAFARIS & LODGE</div>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Safaris</a></li>
+                    <li><a href="#">Destinations</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Safari Hero -->
+    <section class="safari-hero">
+        <div class="safari-hero-content">
+            <h1>Chobe National Park Adventure</h1>
+            <p>4 Days / 3 Nights - Small Groups (Max 6) - From $1,450</p>
+        </div>
+    </section>
+
+    <!-- Safari Details -->
+    <section class="safari-details">
+        <div class="container">
+            <div class="safari-info">
+                <div class="safari-description">
+                    <h2>Experience Africa's Greatest Elephant Sanctuary</h2>
+                    <p>Discover the incredible wildlife concentrations of Chobe National Park, home to Africa's largest elephant population. This adventure combines thrilling game drives with relaxing river cruises for a complete safari experience.</p>
+                    <p>Chobe National Park is renowned for its massive elephant herds that can often be seen bathing and drinking along the riverbanks. The park's diverse ecosystems support a wide variety of wildlife including lions, leopards, buffalo, and over 450 bird species.</p>
+                    <p>Our Chobe adventure offers the perfect balance of land and water-based activities. Experience the thrill of close wildlife encounters during game drives, then unwind with sunset cruises on the Chobe River, where you'll witness incredible concentrations of animals coming to drink.</p>
+                    
+                    <h3>What's Included</h3>
+                    <ul>
+                        <li>Comfortable accommodation in safari lodges</li>
+                        <li>All meals and select beverages</li>
+                        <li>Professional safari guide</li>
+                        <li>Game drives in 4x4 safari vehicles</li>
+                        <li>Chobe River boat cruises</li>
+                        <li>National park fees and permits</li>
+                        <li>Transport between activities</li>
+                    </ul>
+                </div>
+                
+                <div class="safari-highlights">
+                    <h3>Safari Highlights</h3>
+                    <ul>
+                        <li>Massive elephant herds at close range</li>
+                        <li>Sunset river cruises on the Chobe</li>
+                        <li>Expert-guided game drives</li>
+                        <li>Incredible bird watching opportunities</li>
+                        <li>Predator sightings including lions and leopards</li>
+                        <li>Stunning riverside landscapes</li>
+                        <li>Professional photographic opportunities</li>
+                    </ul>
+                    
+                    <div style="margin-top: 30px;">
+                        <h3>Quick Facts</h3>
+                        <p><strong>Duration:</strong> 4 Days / 3 Nights</p>
+                        <p><strong>Group Size:</strong> Max 6 guests</p>
+                        <p><strong>Difficulty:</strong> Easy</p>
+                        <p><strong>Best Time:</strong> May to October</p>
+                        <p><strong>Wildlife:</strong> Elephants, lions, hippos, buffalo</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="booking-section">
+                <h2>Book Your Chobe National Park Adventure</h2>
+                <table class="safari-dates">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Availability</th>
+                            <th>Price</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>12 June 2025 - 16 June 2025</td>
+                            <td><span class="availability available">4 spaces</span></td>
+                            <td>$1,450</td>
+                            <td><button class="book-tour-btn" data-tour="Chobe National Park Adventure" data-date="12 June 2025 - 16 June 2025" data-price="1450">BOOK TOUR</button></td>
+                        </tr>
+                        <tr>
+                            <td>08 July 2025 - 12 July 2025</td>
+                            <td><span class="availability available">2 spaces</span></td>
+                            <td>$1,450</td>
+                            <td><button class="book-tour-btn" data-tour="Chobe National Park Adventure" data-date="08 July 2025 - 12 July 2025" data-price="1450">BOOK TOUR</button></td>
+                        </tr>
+                        <tr>
+                            <td>25 August 2025 - 29 August 2025</td>
+                            <td><span class="availability full">Fully Booked</span></td>
+                            <td>$1,450</td>
+                            <td><button class="book-tour-btn" disabled>FULL</button></td>
+                        </tr>
+                        <tr>
+                            <td>15 September 2025 - 19 September 2025</td>
+                            <td><span class="availability available">6 spaces</span></td>
+                            <td>$1,450</td>
+                            <td><button class="book-tour-btn" data-tour="Chobe National Park Adventure" data-date="15 September 2025 - 19 September 2025" data-price="1450">BOOK TOUR</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to All Safaris</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+       
+                </div>
+                <div class="footer-column">
+                    <h3>Need Help?</h3>
+                    <p>Our safari specialists are here to answer any questions about our Chobe National Park adventures.</p>
+                    <a href="#" class="learn-more-btn" style="display: inline-block; margin-top: 10px;">Contact Us</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 TRACKS ADVENTURE SAFARIS & LODGE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div class="booking-modal" id="bookingModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Book Your Safari Adventure</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            
+            <div class="progress-bar">
+                <div class="progress-step active" data-step="1">
+                    <div class="step-circle">1</div>
+                    <div class="step-label">Guest Details</div>
+                </div>
+                <div class="progress-step" data-step="2">
+                    <div class="step-circle">2</div>
+                    <div class="step-label">Trip Details</div>
+                </div>
+                <div class="progress-step" data-step="3">
+                    <div class="step-circle">3</div>
+                    <div class="step-label">Extras</div>
+                </div>
+            </div>
+            
+            <div class="modal-body">
+                <!-- Step 1: Guest Details -->
+                <div class="step active" id="step-1">
+                    <h3 class="step-title">Guest Information</h3>
+                    
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" class="form-control" placeholder="Enter your full name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" class="form-control" placeholder="Enter your email address" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <div class="phone-group">
+                            <select id="countryCode" class="form-control country-code">
+                                <option value="+267">+267 (BW)</option>
+                                <option value="+1">+1 (US)</option>
+                                <option value="+44">+44 (UK)</option>
+                                <option value="+27">+27 (ZA)</option>
+                                <option value="+254">+254 (KE)</option>
+                                <option value="+61">+61 (AU)</option>
+                                <option value="+49">+49 (DE)</option>
+                                <option value="+33">+33 (FR)</option>
+                            </select>
+                            <input type="tel" id="phone" class="form-control phone-number" placeholder="Phone number" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 2: Trip Details -->
+                <div class="step" id="step-2">
+                    <h3 class="step-title">Trip Details</h3>
+                    
+                    <div class="trip-summary">
+                        <div class="summary-item">
+                            <span class="summary-label">Selected Tour:</span>
+                            <span class="summary-value" id="summary-tour">Chobe National Park Adventure</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Selected Date:</span>
+                            <span class="summary-value" id="summary-date">12 June 2025 - 16 June 2025</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Price:</span>
+                            <span class="summary-value" id="summary-price">$1,450 per person</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="guests">Number of Guests *</label>
+                        <select id="guests" class="form-control" required>
+                            <option value="">Select number of guests</option>
+                            <option value="1">1 Guest</option>
+                            <option value="2">2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                            <option value="5">5 Guests</option>
+                            <option value="6">6 Guests</option>
+                            <option value="7">7 Guests</option>
+                            <option value="8">8 Guests</option>
+                            <option value="9">9 Guests</option>
+                            <option value="10">10 Guests</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Accommodation Preference</label>
+                        <div class="checkbox-group">
+                            <input type="radio" id="accommodation-lodge" name="accommodation" value="lodge" checked>
+                            <label for="accommodation-lodge">Lodge</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="radio" id="accommodation-camping" name="accommodation" value="camping">
+                            <label for="accommodation-camping">Camping</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="radio" id="accommodation-self" name="accommodation" value="self">
+                            <label for="accommodation-self">Self-arranged</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 3: Optional Extras -->
+                <div class="step" id="step-3">
+                    <h3 class="step-title">Optional Extras</h3>
+                    
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="airport-pickup">
+                            <label for="airport-pickup">Airport Pickup Service (+$50)</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Add-on Activities</label>
+                        <div class="addon-options">
+                            <div class="addon-option" data-activity="sunset-cruise">
+                                <i class="fas fa-ship" style="font-size: 24px; margin-bottom: 10px;"></i>
+                                <div>Sunset Boat Cruise</div>
+                                <div class="addon-price">+$75</div>
+                            </div>
+                            <div class="addon-option" data-activity="photo-safari">
+                                <i class="fas fa-camera" style="font-size: 24px; margin-bottom: 10px;"></i>
+                                <div>Photographic Safari</div>
+                                <div class="addon-price">+$120</div>
+                            </div>
+                            <div class="addon-option" data-activity="private-guide">
+                                <i class="fas fa-user-tie" style="font-size: 24px; margin-bottom: 10px;"></i>
+                                <div>Private Guide Upgrade</div>
+                                <div class="addon-price">+$200</div>
+                            </div>
+                            <div class="addon-option" data-activity="cultural-tour">
+                                <i class="fas fa-users" style="font-size: 24px; margin-bottom: 10px;"></i>
+                                <div>Cultural Village Tour</div>
+                                <div class="addon-price">+$60</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="dietary">Dietary Requirements</label>
+                        <textarea id="dietary" class="form-control" rows="3" placeholder="Any dietary restrictions or preferences?"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="special-requests">Special Requests</label>
+                        <textarea id="special-requests" class="form-control" rows="3" placeholder="Any special requests for your safari?"></textarea>
+                    </div>
+                    
+                    <div class="payment-options">
+                        <div class="payment-option selected" data-payment="deposit">
+                            <i class="fas fa-credit-card" style="font-size: 24px; margin-bottom: 10px;"></i>
+                            <div>Pay Deposit (30%)</div>
+                            <div class="payment-note">Secure your booking now</div>
+                        </div>
+                        <div class="payment-option" data-payment="later">
+                            <i class="fas fa-calendar-check" style="font-size: 24px; margin-bottom: 10px;"></i>
+                            <div>Pay Later</div>
+                            <div class="payment-note">Reserve without payment</div>
+                        </div>
+                    </div>
+                    
+                    <div class="payment-details">
+                        <div class="payment-amount" id="payment-amount">$435</div>
+                        <div class="payment-note" id="payment-note">30% deposit due today. Remaining balance due 30 days before your safari.</div>
+                    </div>
+                </div>
+                
+                <!-- Confirmation Step -->
+                <div class="step" id="step-confirmation">
+                    <div class="confirmation">
+                        <div class="confirmation-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>Thank You for Your Booking!</h3>
+                        <p>Your safari adventure is almost ready. A confirmation email has been sent to you with all the details.</p>
+                        
+                        <div class="booking-reference">
+                            Booking Reference: <span id="booking-ref">TRK-2025-0873</span>
+                        </div>
+                        
+                        <p>Our team will contact you within 24 hours to finalize your booking details.</p>
+                        
+                        <button class="btn btn-submit" id="closeConfirmation">Close</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <button class="btn btn-prev" id="prevBtn" disabled>Previous</button>
+                <button class="btn btn-next" id="nextBtn">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const bookingModal = document.getElementById('bookingModal');
+            const closeModalBtn = document.querySelector('.close-modal');
+            const closeConfirmationBtn = document.getElementById('closeConfirmation');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const steps = document.querySelectorAll('.step');
+            const progressSteps = document.querySelectorAll('.progress-step');
+            const addonOptions = document.querySelectorAll('.addon-option');
+            const paymentOptions = document.querySelectorAll('.payment-option');
+            const guestsSelect = document.getElementById('guests');
+            const paymentAmount = document.getElementById('payment-amount');
+            const paymentNote = document.getElementById('payment-note');
+            const bookTourButtons = document.querySelectorAll('.book-tour-btn:not(:disabled)');
+            
+            let currentStep = 1;
+            const totalSteps = 3;
+            let basePrice = 1450; // Default base price for Chobe
+            
+            // Close modal
+            closeModalBtn.addEventListener('click', function() {
+                bookingModal.style.display = 'none';
+            });
+            
+            closeConfirmationBtn.addEventListener('click', function() {
+                bookingModal.style.display = 'none';
+            });
+            
+            window.addEventListener('click', function(e) {
+                if (e.target === bookingModal) {
+                    bookingModal.style.display = 'none';
+                }
+            });
+            
+            // Next button
+            nextBtn.addEventListener('click', function() {
+                if (currentStep < totalSteps) {
+                    // Validate current step before proceeding
+                    if (validateStep(currentStep)) {
+                        currentStep++;
+                        updateStep();
+                    }
+                } else {
+                    // Submit form on the last step
+                    submitForm();
+                }
+            });
+            
+            // Previous button
+            prevBtn.addEventListener('click', function() {
+                if (currentStep > 1) {
+                    currentStep--;
+                    updateStep();
+                }
+            });
+            
+            // Addon options selection
+            addonOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    this.classList.toggle('selected');
+                    calculatePayment();
+                });
+            });
+            
+            // Payment options selection
+            paymentOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    paymentOptions.forEach(opt => opt.classList.remove('selected'));
+                    this.classList.add('selected');
+                    calculatePayment();
+                });
+            });
+            
+            // Guests selection
+            guestsSelect.addEventListener('change', function() {
+                calculatePayment();
+            });
+            
+            // Book Tour buttons
+            bookTourButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const tour = this.getAttribute('data-tour');
+                    const date = this.getAttribute('data-date');
+                    const price = this.getAttribute('data-price');
+                    
+                    openBookingModal(tour, date, price);
+                });
+            });
+            
+            function updateStep() {
+                // Hide all steps
+                steps.forEach(step => {
+                    step.classList.remove('active');
+                });
+                
+                // Show current step
+                document.getElementById(`step-${currentStep}`).classList.add('active');
+                
+                // Update progress bar
+                progressSteps.forEach((step, index) => {
+                    if (index + 1 < currentStep) {
+                        step.classList.add('completed');
+                        step.classList.remove('active');
+                    } else if (index + 1 === currentStep) {
+                        step.classList.add('active');
+                        step.classList.remove('completed');
+                    } else {
+                        step.classList.remove('active', 'completed');
+                    }
+                });
+                
+                // Update buttons
+                prevBtn.disabled = currentStep === 1;
+                
+                if (currentStep === totalSteps) {
+                    nextBtn.textContent = 'Complete Booking';
+                    nextBtn.classList.remove('btn-next');
+                    nextBtn.classList.add('btn-submit');
+                } else {
+                    nextBtn.textContent = 'Next';
+                    nextBtn.classList.remove('btn-submit');
+                    nextBtn.classList.add('btn-next');
+                }
+            }
+            
+            function validateStep(step) {
+                if (step === 1) {
+                    const fullName = document.getElementById('fullName').value;
+                    const email = document.getElementById('email').value;
+                    const phone = document.getElementById('phone').value;
+                    
+                    if (!fullName || !email || !phone) {
+                        alert('Please fill in all required fields');
+                        return false;
+                    }
+                    
+                    // Simple email validation
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                        alert('Please enter a valid email address');
+                        return false;
+                    }
+                }
+                
+                if (step === 2) {
+                    const guests = document.getElementById('guests').value;
+                    
+                    if (!guests) {
+                        alert('Please select the number of guests');
+                        return false;
+                    }
+                }
+                
+                return true;
+            }
+            
+            function calculatePayment() {
+                const guests = parseInt(guestsSelect.value) || 1;
+                let totalPrice = basePrice * guests;
+                
+                // Add addon prices
+                const selectedAddons = document.querySelectorAll('.addon-option.selected');
+                selectedAddons.forEach(addon => {
+                    const priceText = addon.querySelector('.addon-price').textContent;
+                    const price = parseInt(priceText.replace(/\D/g, ''));
+                    totalPrice += price;
+                });
+                
+                // Add airport pickup
+                const airportPickup = document.getElementById('airport-pickup');
+                if (airportPickup.checked) {
+                    totalPrice += 50;
+                }
+                
+                // Calculate deposit or full payment
+                const selectedPayment = document.querySelector('.payment-option.selected').dataset.payment;
+                
+                if (selectedPayment === 'deposit') {
+                    const depositAmount = Math.round(totalPrice * 0.3);
+                    paymentAmount.textContent = `$${depositAmount}`;
+                    paymentNote.textContent = '30% deposit due today. Remaining balance due 30 days before your safari.';
+                } else {
+                    paymentAmount.textContent = `$${totalPrice}`;
+                    paymentNote.textContent = 'Full payment due 30 days before your safari.';
+                }
+            }
+            
+            function submitForm() {
+                // In a real application, you would send the form data to a server here
+                
+                // Show confirmation
+                steps.forEach(step => {
+                    step.classList.remove('active');
+                });
+                document.getElementById('step-confirmation').classList.add('active');
+                
+                // Hide navigation buttons
+                prevBtn.style.display = 'none';
+                nextBtn.style.display = 'none';
+                
+                // Generate a random booking reference
+                const bookingRef = `TRK-2025-${Math.floor(1000 + Math.random() * 9000)}`;
+                document.getElementById('booking-ref').textContent = bookingRef;
+            }
+            
+            function openBookingModal(tourName, tourDate, tourPrice) {
+                // Set tour details in the modal
+                document.getElementById('summary-tour').textContent = tourName;
+                document.getElementById('summary-date').textContent = tourDate;
+                document.getElementById('summary-price').textContent = `$${tourPrice} per person`;
+                
+                // Update base price for calculations
+                basePrice = parseInt(tourPrice);
+                
+                // Reset and show the modal
+                resetForm();
+                bookingModal.style.display = 'block';
+            }
+            
+            function resetForm() {
+                currentStep = 1;
+                updateStep();
+                
+                // Reset form fields
+                document.getElementById('fullName').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('phone').value = '';
+                document.getElementById('guests').value = '';
+                document.getElementById('dietary').value = '';
+                document.getElementById('special-requests').value = '';
+                document.getElementById('airport-pickup').checked = false;
+                
+                // Reset selections
+                addonOptions.forEach(option => {
+                    option.classList.remove('selected');
+                });
+                
+                paymentOptions.forEach(option => {
+                    option.classList.remove('selected');
+                });
+                document.querySelector('.payment-option[data-payment="deposit"]').classList.add('selected');
+                
+                // Reset accommodation
+                document.getElementById('accommodation-lodge').checked = true;
+                
+                // Show navigation buttons
+                prevBtn.style.display = 'block';
+                nextBtn.style.display = 'block';
+                
+                // Calculate initial payment
+                calculatePayment();
+            }
+            
+            // Initialize
+            calculatePayment();
+        });
+    </script>
+</body>
+</html>
