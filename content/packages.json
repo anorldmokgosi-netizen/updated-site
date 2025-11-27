@@ -1,0 +1,37 @@
+{
+  "packages": [
+    {
+      "title": "Okavango Delta Explorer",
+      "image": "/assets/images/PHOTO-2025-11-15-14-35-27.jpg",
+      "image_alt": "Okavango Delta - Mokoro Experience",
+      "description": "Journey through the world's largest inland delta, home to incredible biodiversity and stunning landscapes. Experience mokoro rides and walking safaris.",
+      "duration": "5 Days / 4 Nights",
+      "group_size": "Small Groups (Max 8)",
+      "price": "$1,850",
+      "link": "okavango-delta.html",
+      "featured": true
+    },
+    {
+      "title": "Chobe National Park Adventure",
+      "image": "/assets/images/PHOTO-2025-11-15-14-31-15.jpg",
+      "image_alt": "Chobe National Park - Elephant Herd",
+      "description": "Experience one of Africa's greatest elephant sanctuaries with incredible game viewing opportunities. Enjoy river cruises and guided game drives.",
+      "duration": "4 Days / 3 Nights",
+      "group_size": "Small Groups (Max 6)",
+      "price": "$1,450",
+      "link": "chobe-national-park.html",
+      "featured": true
+    },
+    {
+      "title": "Kalahari Desert Expedition",
+      "image": "/assets/images/PHOTO-2025-11-15-14-59-55 2.jpg",
+      "image_alt": "Kalahari Desert - Gemsbok",
+      "description": "Discover the unique ecosystem of the Kalahari and its specially adapted wildlife. Experience the culture of the San people and breathtaking sunsets.",
+      "duration": "6 Days / 5 Nights",
+      "group_size": "Small Groups (Max 8)",
+      "price": "$1,850",
+      "link": "kalahari-desert.html",
+      "featured": true
+    }
+  ]
+}
